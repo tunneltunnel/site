@@ -1,0 +1,3 @@
+{% for tag in site.tags %}
+<a href="/tag/#{{ tag | first }}">{{ tag | first }} : {{ tag | last | size }}</a>
+{% endfor %}

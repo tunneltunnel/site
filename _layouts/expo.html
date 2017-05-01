@@ -1,0 +1,36 @@
+---
+layout: default
+---
+<article class="post">
+
+    <header class="post-header">
+      <p class="post-meta">
+        <!-- date 1 -->
+        {% if page.date1 %}
+          <h2>{{ page.date1 | date: "%d.%m.%y"}}</h2>
+        {% endif %}
+        <!-- artist 1 -->
+        {% if page.artist1 %}
+          <h2>{{ page.artist1 }}</h2>
+        {% endif %}
+        <!-- date 2 -->
+        {% if page.date2 %}
+          <h2>{{ page.date2 | date: "%d.%m.%y"}}</h2>
+        {% endif %}
+        <!-- artist 1 -->
+        {% if page.artist2 %}
+          <h2>{{ page.artist2 }}</h2>
+        {% endif %}
+        <!-- title -->
+        <h2>{{ page.title | escape }}</h2>
+
+      </p>
+    </header>
+    <div class="post-content" itemprop="articleBody">
+      {{ content }}
+    </div>
+    <div class="flickr_photoset">
+      <a data-flickr-embed="true"  href="https://www.flickr.com/photos/ml0v8a/albums/72157680127299412" title="newalbum"><img src="https://c1.staticflickr.com/3/2863/33714771890_307269b737_z.jpg" width="640" height="640" alt="newalbum"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+    </div>
+
+</article>

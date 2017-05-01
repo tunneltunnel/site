@@ -1,0 +1,105 @@
+# O.o fichier de configuration
+
+title: TUNNEL TUNNEL
+email: mail@tunneltunnel.ch
+description:
+  Tunnel Tunnel est un espace d’art indépendant situé au centre de Lausanne.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username:
+github_username: tunneltunnel
+timezone: Europe/Zurich
+language_default: 'fr'
+
+collections:
+  posts:
+    output: true
+    permalink: /:title
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: "expos"
+      type: "posts" # a collection in your site, in plural form
+    values:
+      layout: "expo"
+
+# galleria:
+#  theme: '//galleria/themes/fullscreen/galleria.fullscreen.js'
+#  user_id: '124658802@N03'
+
+# flickr:
+#   cache_dir:       "./_cache/flickr"
+#   api_key:          edfac20f6422216a30ce56359714910a
+#   shared_secret:    e5e940256c041580
+#   access_token:     72157679423020804-987ee22dfd765f2a
+#   access_secret:    d1354eeafabb3566
+
+# flickr:
+#   screen_name: ml0v8a
+#   api_key: edfac20f6422216a30ce56359714910a
+#   api_secret: e5e940256c041580
+
+# flickr:
+#   api_key: 'edfac20f6422216a30ce56359714910a'
+#   secret: 'edfac20f6422216a30ce56359714910a'
+#   user_id: '124658802@N03'
+#   thumb_size: 'n'
+#   large_size: 'b'
+#   dir: 'photos'
+
+# Build settings
+markdown: kramdown
+theme: minima
+gems:
+ - jekyll-feed
+ - fleakr
+ - flickraw
+ - flickr
+
+
+ # - indii-jekyll-flickr
+exclude:
+ - Gemfile
+ - Gemfile.lock
+port: 8080
+
+# Prose settings
+prose:
+  rooturl: '_posts'
+  siteurl: ''
+  metadata:
+    _posts/expos:
+      - name: "title"
+        field:
+          element: "text"
+          label: "Titre"
+          value: ""
+      - name: "layout"
+        field:
+          element: "hidden"
+          value: "expo"
+      - name: "artist1"
+        field:
+          element: "text"
+          label: "Artiste 1"
+      - name: "artist2"
+        field:
+          element: "text"
+          label: "Artiste 2"
+      - name: "date1"
+        field:
+          element: "text"
+          label: "Date 1"
+          value: "CURRENT_DATETIME"
+      - name: "date2"
+        field:
+          element: "text"
+          label: "Date 2"
+          value: "CURRENT_DATETIME"
