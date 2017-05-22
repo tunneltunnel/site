@@ -9,18 +9,28 @@
   {% include head.html %}
 
   <body>
-    
+    <div class="ui padded equal height stackable grid">
+
     {% include transition.html %}
 
-    {% include header.html %}
+    <!-- {% include header.html %} -->
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </main>
+    {% include side.html %}
 
-    {% include footer.html %}
+    <div class="nine wide stretched column">
+
+      <main class="page-content" aria-label="Content">
+        <div class="wrapper">
+          {{ content }}
+        </div>
+      </main>
+      
+    </div>
+
+    <!-- {% include footer.html %} -->
+
+    </div>
+
 
     {% include js.html %}
 

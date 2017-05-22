@@ -1,0 +1,44 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  {{ content }}
+
+  <ul class="post-list">
+    {% for p in site.posts %}
+
+    <article class="post">
+jkh
+        <header class="post-header">
+          <p class="post-meta">
+            <!-- date 1 -->
+            {% if p.date1 %}
+              <h2>{{ p.date1 | date: "%d.%m.%y"}}</h2>
+            {% endif %}
+            <!-- artist 1 -->
+            {% if p.artist1 %}
+              <h2>{{ p.artist1 }}</h2>
+            {% endif %}
+            <!-- date 2 -->
+            {% if p.date2 %}
+              <h2>{{ p.date2 | date: "%d.%m.%y"}}</h2>
+            {% endif %}
+            <!-- artist 1 -->
+            {% if p.artist2 %}
+              <h2>{{ p.artist2 }}</h2>
+            {% endif %}
+            <!-- title -->
+            <h2>{{ p.title | escape }}</h2>
+
+          </p>
+        </header>
+        <div class="post-content" itemprop="articleBody">
+          {{ p.content }}
+        </div>
+
+    </article>
+    {% endfor %}
+  </ul>
+</div>

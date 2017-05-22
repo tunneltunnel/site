@@ -10,34 +10,38 @@ layout: default
     {% for p in site.posts %}
 
     <article class="post">
+      <div class="nine wide stretched column">
+        <div class="ui stackable grid">
+          <div class="four wide column">
+            <div class="container" id="dts">
+              {% if p.date1 %}
+                <h1>{{ p.date1 | date: "%d.%m.%y"}}</h1>
+              {% endif %}
+              {% if p.date2 %}
+                <h1>{{ p.date2 | date: "%d.%m.%y"}}</h1>
+              {% endif %}
+            </div>
+					</div>
+          <div class="ten wide column">
+            <div class="container" id="txt">
+              {% if p.artist1 %}
+                <h1>{{ p.artist1 }}</h1>
+              {% endif %}
+              {% if p.artist2 %}
+                <h1>{{ p.artist2 }}</h1>
+              {% endif %}
 
-        <header class="post-header">
-          <p class="post-meta">
-            <!-- date 1 -->
-            {% if p.date1 %}
-              <h2>{{ p.date1 | date: "%d.%m.%y"}}</h2>
-            {% endif %}
-            <!-- artist 1 -->
-            {% if p.artist1 %}
-              <h2>{{ p.artist1 }}</h2>
-            {% endif %}
-            <!-- date 2 -->
-            {% if p.date2 %}
-              <h2>{{ p.date2 | date: "%d.%m.%y"}}</h2>
-            {% endif %}
-            <!-- artist 1 -->
-            {% if p.artist2 %}
-              <h2>{{ p.artist2 }}</h2>
-            {% endif %}
-            <!-- title -->
-            <h2>{{ p.title | escape }}</h2>
+              <h1>{{ p.title | escape }}</h1>
 
-          </p>
-        </header>
-        <div class="post-content" itemprop="articleBody">
-          {{ p.content }}
+              <div class="post-content" itemprop="articleBody">
+                {{ p.content }}
+              </div>
+            </div>
+          </div>
+          <div class="two wide stretched column"></div>
+          <div class="sixteen wide column"></div>
         </div>
-
+      </div>
     </article>
     {% endfor %}
   </ul>
